@@ -46,43 +46,89 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
 
+1. Create a new project in Quartus2 software.
+2. Name the project as uc for upcounter and dc for the down counter.
+3. Create a new verilog hdl file in the project file.
+4. Name the module declare as dc and uc for the down counter and up counter.
+5. Within the module declare input and output variables.
+6. Create a loop using if-else with condition parameter as rest.
+7. End the loop.
+8. End the module.
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+
+UP COUNTER
+
+module UPCOUNTER(input clk,input reset,output[0:3]counter);
+reg[0:3]counter_up;
+always@(posedge clk or posedge reset)
+begin 
+if(reset)
+counter_up<=counter_up+4'd1;
+end 
+assign counter=counter_up;
+end module
+
+DOWN COUNTER
+
+module DOWNCOUNTER(input clk,input reset,output[0:3]counter);
+reg[0:3]counter_down;
+always@(posedge clk or posedge reset)
+begin 
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+
+
+Developed by: HARINI.E
+RegisterNumber:  212222050017
 */
 
 
 
+### RTL LOGIC 
+
+UP COUNTER 
+
+![Up rtl](https://github.com/HariniEEE/Exp-7-Synchornous-counters-/assets/128949246/5a0ea338-76d2-46b9-9660-a386eb128350)
+
+DOWN COUNTER
+
+![down rtl](https://github.com/HariniEEE/Exp-7-Synchornous-counters-/assets/128949246/17ba8314-a5f2-40f3-aecd-4611a1ea774f)
 
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+### TIMING DIGRAMS 
 
+UP COUNTER
 
+![up timing](https://github.com/HariniEEE/Exp-7-Synchornous-counters-/assets/128949246/6e9c0a88-3a16-46ae-9930-b487a2defa66)
 
+DOWN COUNTER
 
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
+![down timing](https://github.com/HariniEEE/Exp-7-Synchornous-counters-/assets/128949246/429efa2b-1cb7-47af-8066-c43f6704e0c4)
 
 
 ### TRUTH TABLE 
 
+UP COUNTER
 
+![up truth](https://github.com/HariniEEE/Exp-7-Synchornous-counters-/assets/128949246/10c83d57-2648-4e14-8405-c92ef4a6bd2a)
 
+DOWN COUNTER
 
+![down truh](https://github.com/HariniEEE/Exp-7-Synchornous-counters-/assets/128949246/be61ec9e-09eb-4f82-a2ea-f539ef376b32)
 
 
 ### RESULTS 
+
+Thus synchronous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
+
